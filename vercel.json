@@ -1,13 +1,11 @@
 {
-  "headers": [
+  "routes": [
     {
-      "source": "/uploads/(.*)\\.usdz",
-      "headers": [
-        { "key": "Content-Type", "value": "model/vnd.usdz+zip" }
-      ]
+      "src": "/uploads/(.*)\\.usdz",
+      "headers": {
+        "Content-Type": "model/vnd.usdz+zip"
+      },
+      "dest": "/uploads/$1.usdz"
     }
-  ],
-  "rewrites": [
-    { "source": "/uploads/:path*", "destination": "/uploads/:path*" }
   ]
 }
